@@ -15,7 +15,9 @@ table {
   background: #fff;
   border-collapse: collapse;
 }
-
+i {
+  padding-right: 0.2rem;
+}
 thead {
   background-color: #ff8c00;
   text-transform: capitalize;
@@ -57,8 +59,13 @@ a {
   text-align: center;
 }
 li:hover a {
-  background-color: black;
   color: whITE;
+  background-color: black;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 li:hover {
   background-color: black;
