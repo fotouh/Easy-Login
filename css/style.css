@@ -107,8 +107,7 @@ thead tr {
 }
 
 footer a {
-  padding:1rem;
-  margin:  0%;
+  padding: 0;
   background-color: transparent;
   color: #000;
 }

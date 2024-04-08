@@ -1,30 +1,9 @@
-function myFunction() {
-  const input = document.getElementById("myInput");
-  const table = document.getElementById("fault");
-  const request = document.getElementById("request");
-  const acc = document.getElementById("acc");
-
-  const filter = input.value.toUpperCase();
-  const rows = table.getElementsByTagName("tr");
-
-  for (let i = 0; i < rows.length; i++) {
-    const td = rows[i].getElementsByTagName("td")[0]; // Assuming you want to search by the first column (Name)
-    if (td) {
-      const txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        rows[i].style.display = ""; // Show matching rows
-      } else {
-        rows[i].style.display = "none"; // Hide non-matching rows
-      }
-    }
-  }
-}
-
 const tables = document.getElementsByTagName("table");
 const input = document.getElementById("myInput");
-
+let SearchWord;
 function fault() {
   const fault = document.getElementById("fault");
+  SearchWord = 0;
   for (let i = 0; i < tables.length; i++) {
     if (tables[i] == fault) {
       tables[i].style.display = "block";
@@ -37,6 +16,7 @@ function fault() {
 }
 function request() {
   const request = document.getElementById("request");
+  SearchWord = 1;
   for (let i = 0; i < tables.length; i++) {
     if (tables[i] == request) {
       tables[i].style.display = "block";
@@ -49,6 +29,7 @@ function request() {
 }
 function acc() {
   const acc = document.getElementById("acc");
+  SearchWord = 2;
   for (let i = 0; i < tables.length; i++) {
     if (tables[i] == acc) {
       tables[i].style.display = "block";
@@ -56,6 +37,22 @@ function acc() {
       input.style.color = "white";
     } else {
       tables[i].style.display = "none";
+    }
+  }
+}
+
+function searchTable() {
+  var rows = tables[SearchWord].getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName("td");
+
+    for (var j = 0; j < cells.length; j++) {
+      if (cells[j].innerHTML.includes(input.value)) {
+        rows[i].style.display = "grid";
+        break;
+      } else {
+        rows[i].style.display = "none";
+      }
     }
   }
 }
