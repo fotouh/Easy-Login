@@ -43,9 +43,9 @@ function acc() {
 
 function searchTable() {
   var rows = tables[SearchWord].getElementsByTagName("tr");
+
   for (var i = 0; i < rows.length; i++) {
     var cells = rows[i].getElementsByTagName("td");
-
     for (var j = 0; j < cells.length; j++) {
       if (cells[j].innerHTML.includes(input.value)) {
         rows[i].style.display = "grid";
