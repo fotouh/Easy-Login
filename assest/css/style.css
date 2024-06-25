@@ -112,6 +112,7 @@ footer a {
   color: #000;
 }
 td > a{
+  color: black;
   text-align: center;
   width: 100%;
   padding: 0;
