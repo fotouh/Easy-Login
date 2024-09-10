@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #ff8c00;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 table {
   border-spacing: 0;
   background: #fff;
@@ -33,57 +27,20 @@ td {
 #myTable tbody tr:hover {
   background-color: #ccc;
 }
+/* grid-template-columns: repeat(4, 1fr); */
 
-li {
-  list-style: none;
-  background-color: aliceblue;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-a {
-  text-decoration: none;
-  background-color: aliceblue;
-  color: black;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  color: black;
-  padding: 0.5rem 0;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-}
-li:hover a {
-  color: whITE;
-  background-color: black;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-}
-li:hover {
-  background-color: black;
-  color: whITE;
-}
+/* tr {
+  display: in;
+} */
 thead tr {
   background-color: black;
   color: white;
 }
+/* display: grid;
+place-items: center; */
 td,
 th {
   padding: 0.5rem;
-}
-
-table {
-  border-spacing: 0;
-  background: #fff;
-  border-collapse: collapse;
 }
 
 thead {
@@ -93,17 +50,12 @@ thead {
 
 td {
   border-bottom: 3px solid black;
-
-  padding: 0.25rem 0.5rem;
+  text-align: center;
+  /* padding: 0.25rem 0.5rem; */
 }
 
 table tbody tr:hover {
   background-color: #ccc;
-}
-
-thead tr {
-  background-color: black;
-  color: white;
 }
 
 footer a {
@@ -111,11 +63,32 @@ footer a {
   background-color: transparent;
   color: #000;
 }
-td > a{
+td > a {
   color: black;
+  display: block;
   text-align: center;
   width: 100%;
   padding: 0;
   margin: 0;
   background-color: transparent;
+}
+.active {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-radius: 0.5rem;
+}
+[onclick="fault()"] {
+  background-color: rgb(187, 45, 59);
+}
+[onclick="request()"] {
+  background-color: rgb(255, 193, 7);
+}
+[onclick="acc()"] {
+  background-color: rgb(25, 135, 84);
 }

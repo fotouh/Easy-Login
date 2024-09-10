@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assest/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="assest/css/bootstrap.min.css" /> -->
+    <link
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="assest/css/all.min.css" />
     <link rel="stylesheet" href="assest/css/style.css" />
     <link
@@ -12,10 +17,11 @@
       type="image/x-icon"
     />
     <title>Easy Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-orange-500 font-mono">
     <header>
-      <nav class="bg-black d-flex justify-content-between">
+      <nav class="bg-black flex justify-between">
         <picture>
           <img
             width="150px"
@@ -24,65 +30,114 @@
             alt="Logo"
           />
         </picture>
-        <p class="text-light d-flex align-items-end pe-3">
+        <p class="text-white flex items-end p-3">
           Coded By : Fatoh Mohamed Care Of Esraa Saied
         </p>
       </nav>
-      <h1
-        class="d-flex flex-column justify-content-center align-items-center text-light py-5"
-      >
-        <p class="text-start">Welcome to Easy Login 👋</p>
-      </h1>
     </header>
-    <main class="d-flex justify-content-center">
+    <nav>
       <ul
-        class="d-flex align-items-center gap-5 h1 flex-wrap justify-content-center text-center"
+        id="list"
+        class="flex justify-around flex-wrap font-bold bg-white-50 border-b-2"
       >
-        <li>
-          <a class="px-3" href="siebelGuide.html"
-            ><i class="fa-solid fa-book"></i> Siebel Guide</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Siebel Guide</a
           >
         </li>
-
-        <li>
-          <a class="px-3" href="Trouble Shooting.html"
-            ><i class="fa-solid fa-screwdriver-wrench"></i> Trouble Shooting</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Trouble Shooting</a
           >
         </li>
-        <li>
-          <a class="px-3" href="My Orange Map - V 7.8.0.pdf" target="_blank"
-            ><i class="fa-solid fa-mobile-screen"></i> Orange Simulator</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a
+            class="flex p-4 items-center h-full w-full"
+            onclick="window.open('My Orange Map - V 7.8.0.pdf', '_blank', 'fullscreen=yes'); return false;"
+            >Orange Simulator</a
           >
         </li>
-        <li>
-          <a class="px-3" href="Manual Activties.html"
-            ><i class="fa-solid fa-person-running"></i></i> Manual
-            Activties</a
+        <li
+          class="active capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Home</a
           >
         </li>
-        <li>
-          <a class="px-3" href="Intra Guide.html"
-            ><i class="fa-solid fa-road"></i> Intra Guide</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Manual Activties</a
           >
         </li>
-        <li>
-          <a class="px-3" href="QMails.html "
-            ><i class="fa-solid fa-envelope"></i> Q Mails</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Intra Guide</a
           >
         </li>
-        <li>
-          <a class="px-3" href="Bulk.html"
-            ><i class="fa-solid fa-trash"></i> Bulk</a
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
+            >Q Mails</a
           >
+        </li>
+        <li
+          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
+        >
+          <a class="flex p-4 items-center h-full w-full">Bulk</a>
         </li>
       </ul>
+    </nav>
+    <main class="flex flex-col justify-center items-center">
+      <h1
+        class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
+      >
+        Welcome to Easy Login 👋
+      </h1>
+      <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
+        <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+          Vat For Pre
+        </h1>
+        <div class="flex gap-4">
+          <div class="flex flex-col gap-3">
+            <input
+              class="p-2 rounded-lg"
+              type="number"
+              id="AfTaxes"
+              placeholder="Amount After Taxes"
+            />
+            <div class="p-2 rounded-lg bg-white">Balance</div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <input
+              class="p-2 rounded-lg"
+              type="number"
+              id="BefTaxes"
+              placeholder="Balance"
+            />
+            <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer class="position-absolute bottom-0 end-0 m-3">
+    <div class="hidden"></div>
+    <!-- <footer class="position-absolute bottom-0 end-0 m-3">
       <a class="fs-3" href="mailto:fatoh.mohaboelfotouh.ext@orange.com"
         ><i class="fa-solid fa-envelope me-2 text-danger fa-beat"></i>Fatoh
         Mohamed</a
       >
-    </footer>
+    </footer> -->
     <script src="assest/javascript/all.min.js"></script>
+    <script src="assest/javascript/main.js"></script>
   </body>
 </html>
