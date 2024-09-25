@@ -7888,7 +7888,7 @@ function inl() {
           if (result.innerHTML === "Siebel Guide") {
             Swal.fire({
               title: "How To Search ?",
-              text: "To Use Search Func First Letter Of Each Word Should Be Captial",
+              text: "To Use Search Func First Letter Of Each Word Should Be Captial \n You Can Search By SR Number",
               icon: "info",
               timer: 1500,
               showConfirmButton: false,
