@@ -12,10 +12,7 @@
 //     window.alert("wrong User & Password");
 //   }
 // }
-let tables = document.getElementsByTagName("table");
-let input = document.getElementById("myInput");
 
-let SearchWord;
 let mains = {
   Home: `<h1
         class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
@@ -57,33 +54,30 @@ let mains = {
             class="rounded-xl p-4  flex justify-around position-sticky w-3/4"
             type="search"
             id="myInput"
-            onkeyup="searchTable()"
+            
             placeholder="Search By Request"
             aria-label="Search"
           />
-        <ul class="flex gap-3 justify-between bg-black p-2 rounded-xl">
-          <li>
+        <ul class="flex gap-3 justify-between bg-black p-2 rounded-xl" id="SieList">
+          <li class="text-white rounded-xl">
             <button
-              class="p-2 text-white rounded-xl"
-              onclick="fault()"
+              class="p-2"
               type="button"
             >
               Fault
             </button>
           </li>
-          <li>
+          <li class="text-white rounded-xl">
             <button
-              class="p-2 text-white rounded-xl"
-              onclick="request()"
+              class="p-2"
               type="button"
             >
               Request
             </button>
           </li>
-          <li>
+          <li class="text-white rounded-xl">
             <button
-              class="p-2 text-white rounded-xl"
-              onclick="acc()"
+              class="p-2"
               type="button"
             >
               Acc
@@ -7891,6 +7885,81 @@ function inl() {
           );
           hasac[0].classList.remove("active");
           result.classList.add("active");
+          if (result.innerHTML === "Siebel Guide") {
+            Swal.fire({
+              title: "How To Search ?",
+              text: "To Use Search Func First Letter Of Each Word Should Be Captial",
+              icon: "info",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+            let tables = document.getElementsByTagName("table");
+            let input = document.getElementById("myInput");
+            let SieOpt = document.getElementById("SieList");
+            input.addEventListener("input", function () {
+              var rows = tables[SearchWord].getElementsByTagName("tr");
+
+              for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                for (var j = 0; j < cells.length; j++) {
+                  if (cells[j].innerHTML.includes(input.value)) {
+                    rows[i].style.display = "table-row";
+                    break;
+                  } else {
+                    rows[i].style.display = "none";
+                  }
+                }
+              }
+            });
+            SieOpt.addEventListener("click", function (e) {
+              if (e.target.innerHTML.trim() === "Fault") {
+                e.target.addEventListener("click", function () {
+                  const fault = document.getElementById("fault");
+                  SearchWord = 0;
+                  for (let i = 0; i < tables.length; i++) {
+                    if (tables[i] == fault) {
+                      tables[i].style.display = "table";
+                      input.style.backgroundColor = "#bb2d3b";
+                      input.style.color = "white";
+                    } else {
+                      tables[i].style.display = "none";
+                    }
+                  }
+                });
+              } else if (e.target.innerHTML.trim() === "Request") {
+                e.target.addEventListener("click", function () {
+                  const request = document.getElementById("request");
+                  SearchWord = 1;
+                  for (let i = 0; i < tables.length; i++) {
+                    if (tables[i] == request) {
+                      tables[i].style.display = "table";
+                      input.style.backgroundColor = "#ffc107";
+                      input.style.color = "#000";
+                    } else {
+                      tables[i].style.display = "none";
+                    }
+                  }
+                });
+              } else if (e.target.innerHTML.trim() === "Acc") {
+                e.target.addEventListener("click", function () {
+                  const acc = document.getElementById("acc");
+                  SearchWord = 2;
+                  for (let i = 0; i < tables.length; i++) {
+                    if (tables[i] == acc) {
+                      tables[i].style.display = "table";
+                      input.style.backgroundColor = "#198754";
+                      input.style.color = "white";
+                    } else {
+                      tables[i].style.display = "none";
+                    }
+                  }
+                });
+              }
+            });
+            console.log(SieOpt);
+            console.log(input);
+            console.log(tables);
+          }
           if (result.innerHTML === "Home") {
             let inpv = document.getElementById("AfTaxes");
             inpv.addEventListener("input", function () {
@@ -7916,64 +7985,8 @@ function inl() {
       }
     }
   };
-  //
-  // first elemnt of main = (newm.firstelemnt || afternav .firstelement).inner
-}
-function fault() {
-  const fault = document.getElementById("fault");
-  SearchWord = 0;
-  for (let i = 0; i < tables.length; i++) {
-    if (tables[i] == fault) {
-      tables[i].style.display = "block";
-      input.style.backgroundColor = "#bb2d3b";
-      input.style.color = "white";
-    } else {
-      tables[i].style.display = "none";
-    }
-  }
-}
-function request() {
-  const request = document.getElementById("request");
-  SearchWord = 1;
-  for (let i = 0; i < tables.length; i++) {
-    if (tables[i] == request) {
-      tables[i].style.display = "block";
-      input.style.backgroundColor = "#ffc107";
-      input.style.color = "#000";
-    } else {
-      tables[i].style.display = "none";
-    }
-  }
-}
-function acc() {
-  const acc = document.getElementById("acc");
-  SearchWord = 2;
-  for (let i = 0; i < tables.length; i++) {
-    if (tables[i] == acc) {
-      tables[i].style.display = "block";
-      input.style.backgroundColor = "#198754";
-      input.style.color = "white";
-    } else {
-      tables[i].style.display = "none";
-    }
-  }
 }
 
-function searchTable() {
-  var rows = tables[SearchWord].getElementsByTagName("tr");
-
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName("td");
-    for (var j = 0; j < cells.length; j++) {
-      if (cells[j].innerHTML.includes(input.value)) {
-        rows[i].style.display = "grid";
-        break;
-      } else {
-        rows[i].style.display = "none";
-      }
-    }
-  }
-}
 let inpv = document.getElementById("AfTaxes");
 inpv.addEventListener("input", function () {
   inpv.nextElementSibling.innerHTML = (inpv.value * 0.7).toFixed(2) + " LE";
