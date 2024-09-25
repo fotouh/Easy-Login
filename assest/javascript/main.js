@@ -12,7 +12,10 @@
 //     window.alert("wrong User & Password");
 //   }
 // }
+let tables = document.getElementsByTagName("table");
+let input = document.getElementById("myInput");
 
+let SearchWord;
 let mains = {
   Home: `<h1
         class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
@@ -49,16 +52,15 @@ let mains = {
       </h1>
 
       <div class="flex w-full justify-center gap-2 items-center flex-wrap mb-8">
-        <form class="flex justify-around position-sticky w-3/4">
+
           <input
-            class="inline rounded-xl p-4 w-full"
+            class="rounded-xl p-4  flex justify-around position-sticky w-3/4"
             type="search"
             id="myInput"
             onkeyup="searchTable()"
             placeholder="Search By Request"
             aria-label="Search"
           />
-        </form>
         <ul class="flex gap-3 justify-between bg-black p-2 rounded-xl">
           <li>
             <button
@@ -7856,23 +7858,15 @@ let mains = {
 
 //  get li a innerHTML
 let menu = document.querySelector("nav ul").children;
-// console.log(menu.length);
-// console.log(menu[0].firstElementChild.innerHTML);
-// h1 from current main
-// console.log(divh.previousElementSibling.firstElementChild);
+// select hidden div
 let divh = document.querySelector(".hidden");
-// console.log(
-//   divh.previousElementSibling.firstElementChild.innerHTML.trim(),
-//   menu[0].firstElementChild.innerHTML.trim(),
-//   divh.previousElementSibling.firstElementChild.innerHTML.trim() ===
-//     menu[0].firstElementChild.innerHTML.trim()
-// );
 
 function inl() {
   let navi = document.getElementById("list");
   let hasac = document.getElementsByClassName("active");
   let result = "";
   let newm = document.createElement("main");
+
   navi.onclick = (e) => {
     let result = e.target;
     let getfromains = result.innerHTML.replaceAll(" ", "");
@@ -7897,6 +7891,18 @@ function inl() {
           );
           hasac[0].classList.remove("active");
           result.classList.add("active");
+          if (result.innerHTML === "Home") {
+            let inpv = document.getElementById("AfTaxes");
+            inpv.addEventListener("input", function () {
+              inpv.nextElementSibling.innerHTML =
+                (inpv.value * 0.7).toFixed(2) + " LE";
+            });
+            let inpv2 = document.getElementById("BefTaxes");
+            inpv2.addEventListener("input", function () {
+              inpv2.nextElementSibling.innerHTML =
+                (inpv2.value / 0.7).toFixed(2) + " LE";
+            });
+          }
         } else if (result === "Orange Simulator") {
           newm.innerHTML = mains["Home"];
           divh.before(newm);
@@ -7913,10 +7919,6 @@ function inl() {
 
   // first elemnt of main = (newm.firstelemnt || afternav .firstelement).inner
 }
-
-const tables = document.getElementsByTagName("table");
-const input = document.getElementById("myInput");
-let SearchWord;
 function fault() {
   const fault = document.getElementById("fault");
   SearchWord = 0;
@@ -7972,15 +7974,3 @@ function searchTable() {
     }
   }
 }
-let inpv = document.getElementById("AfTaxes");
-// inpv.oninput = function () {
-//   inpv.nextElementSibling.innerHTML = (inpv.value * 0.7).toFixed(2);
-// };
-
-inpv.addEventListener("input", function () {
-  inpv.nextElementSibling.innerHTML = (inpv.value * 0.7).toFixed(2) + " LE";
-});
-let inpv2 = document.getElementById("BefTaxes");
-inpv2.oninput = function () {
-  inpv2.nextElementSibling.innerHTML = (inpv2.value / 0.7).toFixed(2) + " LE";
-};
