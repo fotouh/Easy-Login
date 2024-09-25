@@ -7974,3 +7974,11 @@ function searchTable() {
     }
   }
 }
+let inpv = document.getElementById("AfTaxes");
+inpv.addEventListener("input", function () {
+  inpv.nextElementSibling.innerHTML = (inpv.value * 0.7).toFixed(2) + " LE";
+});
+let inpv2 = document.getElementById("BefTaxes");
+inpv2.addEventListener("input", function () {
+  inpv2.nextElementSibling.innerHTML = (inpv2.value / 0.7).toFixed(2) + " LE";
+});
