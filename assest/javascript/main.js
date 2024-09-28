@@ -7848,6 +7848,113 @@ let mains = {
         </tbody>
       </table>
     `,
+    TipsAndTricks:`<h1
+        class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
+      >
+        Tips And Tricks
+      </h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>User</th>
+            <th>Pass</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="http://10.56.230.56:8080/cs/home.html#statusmodification"
+                >Call Tone CRBT</a
+              >
+            </td>
+            <td>IMI00104</td>
+            <td>qwA_324</td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank" href="https://customercare.mondia.com/login"
+                >Mondia</a
+              >
+            </td>
+            <td>orangecustomercare@orange.com</td>
+            <td>P@$$w0rd</td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="https://self-manage.tpay.me/simpleLogin.aspx"
+                >T-pay</a
+              >
+            </td>
+            <td>Mobinilcustmercare@Mobinil.com</td>
+            <td>Or@ngeCare</td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="https://gdapps.info/OrangeAlerts/LoginPage.aspx"
+                >Go Digital</a
+              >
+            </td>
+            <td>OrangeCS</td>
+            <td>oR@ng_Gd4663_#$</td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank" href="https://secure.gameloft.com/supporttool/"
+                >Game Loft</a
+              >
+            </td>
+            <td>mobinilEgypt</td>
+            <td>spTgNbL2</td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="https://customercare.contactdve.com/Clientsearch?"
+                >Hareef Ghona Digital</a
+              >
+            </td>
+            <td>Orange_EG_Cuscare</td>
+            <td>OrAnEgcUsCRs52*</td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="https://icebergportal.dvmproduct.com/user/view?id=1636"
+                >Hareef Ghona Ice</a
+              >
+            </td>
+            <td>5$Nf@79M</td>
+            <td>rhannah</td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                target="_blank"
+                href="http://orange.alerting.services/OrangeCC/default.aspx?CI=Subscribtions.ascx"
+                >Hareef Gaming -Kora - Mawaheb</a
+              >
+            </td>
+            <td>Orangecc</td>
+            <td>tf7hy</td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank" href="https://10.56.230.92:8081/">Status</a>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>`
 };
 
 //  get li a innerHTML
