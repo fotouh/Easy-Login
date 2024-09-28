@@ -7850,9 +7850,7 @@ let mains = {
     `,
     TipsAndTricks:`<h1
         class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
-      >
-        Tips And Tricks
-      </h1>
+      >Tips And Tricks</h1>
       <table>
         <thead>
           <tr>
