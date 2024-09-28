@@ -7868,8 +7868,8 @@ let mains = {
             <td>Explain The Country Which Cs At it Outside + opreator Which He Latched on it</td>
           </tr>
           <tr>
-            <td>roaming_welcome_out	</td>
-            <td>Explain The Country Which Cs At it Outside + opreator Which He Latched on it</td>
+            <td>roaming_welcome_in	</td>
+            <td>Explain The Country Which </td>
           </tr>
         </tbody>
       </table>`
