@@ -7869,7 +7869,7 @@ let mains = {
           </tr>
           <tr>
             <td>roaming_welcome_in	</td>
-            <td>Explain The Country Which </td>
+            <td>Explain The Country Which cs</td>
           </tr>
         </tbody>
       </table>`
