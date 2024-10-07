@@ -112,29 +112,93 @@
       >
         Welcome to Easy Login 👋
       </h1>
-      <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
-        <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-          Vat For Pre
-        </h1>
-        <div class="flex gap-4">
-          <div class="flex flex-col gap-3">
-            <input
-              class="p-2 rounded-lg"
-              type="number"
-              id="AfTaxes"
-              placeholder="Amount After Taxes"
-            />
-            <div class="p-2 rounded-lg bg-white">Balance</div>
+      <div class="grid grid-cols-6 gap-4 w-11/12">
+        <div class="grid col-span-4 pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Vat For post
+          </h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Amount * 8%</th>
+                <th>(Amount * 8% + Amount )* 14%</th>
+                <th>Total</th>
+                <th>After New Dev</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input id="PostVat" type="number" placeholder="Amount" />
+                </td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Vat For Pre
+          </h1>
+          <div class="flex gap-4">
+            <div class="flex flex-col gap-3">
+              <input
+                class="p-2 rounded-lg"
+                type="number"
+                id="AfTaxes"
+                placeholder="Amount After Taxes"
+              />
+              <div class="p-2 rounded-lg bg-white">Balance</div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <input
+                class="p-2 rounded-lg"
+                type="number"
+                id="BefTaxes"
+                placeholder="Balance"
+              />
+              <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+            </div>
           </div>
-          <div class="flex flex-col gap-3">
-            <input
-              class="p-2 rounded-lg"
-              type="number"
-              id="BefTaxes"
-              placeholder="Balance"
-            />
-            <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+        </div>
+        <div
+          class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg"
+        >
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Calc Days
+          </h1>
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-3">
+              <div class="p-2 rounded-lg bg-white">From</div>
+              <input
+                class="p-2 rounded-lg"
+                type="date"
+                id="Start"
+                placeholder="Amount After Taxes"
+              />
+            </div>
+            <div class="flex gap-3">
+              <div class="p-2 rounded-lg bg-white">..To</div>
+              <input
+                class="p-2 rounded-lg"
+                type="date"
+                id="End"
+                placeholder="Balance"
+              />
+            </div>
+            <div id="TotalDays" class="p-2 rounded-lg bg-white">Total Days</div>
           </div>
+        </div>
+        <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Amount Should Be Paid
+          </h1>
+          <div id="TotalMonths" class="p-2 rounded-lg bg-white"></div>
+          <div class="p-2 rounded-lg bg-white">Le</div>
         </div>
       </div>
     </main>

@@ -15,36 +15,99 @@
 
 let mains = {
   Home: `<h1
-        class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
+        class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
       >
         Welcome to Easy Login 👋
       </h1>
-      <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
-        <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-          Vat For Pre
-        </h1>
-        <div class="flex gap-4">
-          <div class="flex flex-col gap-3">
-            <input
-              class="p-2 rounded-lg"
-              type="number"
-              id="AfTaxes"
-              placeholder="Amount After Taxes"
-            />
-            <div class="p-2 rounded-lg bg-white">Balance</div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <input
-              class="p-2 rounded-lg"
-              type="number"
-              id="BefTaxes"
-              placeholder="Balance"
-            />
-            <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+      <div class="grid grid-cols-6 gap-4 w-11/12">
+        <div class="grid col-span-4 pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Vat For post
+          </h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Amount * 8%</th>
+                <th>(Amount * 8% + Amount )* 14%</th>
+                <th>Total</th>
+                <th>After New Dev</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input id="PostVat" type="number" placeholder="Amount" />
+                </td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Vat For Pre
+          </h1>
+          <div class="flex gap-4">
+            <div class="flex flex-col gap-3">
+              <input
+                class="p-2 rounded-lg"
+                type="number"
+                id="AfTaxes"
+                placeholder="Amount After Taxes"
+              />
+              <div class="p-2 rounded-lg bg-white">Balance</div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <input
+                class="p-2 rounded-lg"
+                type="number"
+                id="BefTaxes"
+                placeholder="Balance"
+              />
+              <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+            </div>
           </div>
         </div>
-      </div>
-`,
+        <div
+          class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg"
+        >
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Calc Days
+          </h1>
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-3">
+              <div class="p-2 rounded-lg bg-white">From</div>
+              <input
+                class="p-2 rounded-lg"
+                type="date"
+                id="Start"
+                placeholder="Amount After Taxes"
+              />
+            </div>
+            <div class="flex gap-3">
+              <div class="p-2 rounded-lg bg-white">..To</div>
+              <input
+                class="p-2 rounded-lg"
+                type="date"
+                id="End"
+                placeholder="Balance"
+              />
+            </div>
+            <div id="TotalDays" class="p-2 rounded-lg bg-white">Total Days</div>
+          </div>
+        </div>
+        <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
+          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+            Amount Should Be Paid
+          </h1>
+          <div id="TotalMonths" class="p-2 rounded-lg bg-white"></div>
+          <div class="p-2 rounded-lg bg-white">Le</div>
+        </div>
+      </div>`,
   SiebelGuide: `<h1 class="text-center text-white font-bold py-4 text-4xl">Siebel Guide
       </h1>
 
@@ -7971,6 +8034,60 @@ function inl() {
               inpv2.nextElementSibling.innerHTML =
                 (inpv2.value / 0.7).toFixed(2) + " LE";
             });
+            let Start = document.getElementById("Start");
+            let End = document.getElementById("End");
+            let Total = document.getElementById("TotalDays");
+            End.addEventListener("input", function () {
+              let date1 = new Date(Start.value);
+              let date2 = new Date(End.value);
+              let Months = document.getElementById("TotalMonths");
+              let AMountRes = Months.nextElementSibling;
+              if (!isNaN(date1) && !isNaN(date2)) {
+                let difference = date2 - date1;
+                let DifDays = difference / 1000 / 60 / 60 / 24 + 1;
+                Total.innerHTML = `Total Days = ${DifDays}`;
+                Months.innerHTML = `${(DifDays / 30).toFixed(2)}`;
+                AMountRes.innerHTML = `${(Months.innerHTML * 36.93).toFixed(
+                  2
+                )}`;
+              } else {
+                Swal.fire({
+                  title: "Error",
+                  text: "One or both dates are invalid.",
+                  icon: "error",
+                  timer: 1500,
+                  showConfirmButton: false,
+                });
+              }
+            });
+            let PostVat = document.getElementById("PostVat");
+            let Amount8 = PostVat.parentElement.nextElementSibling;
+            let Amount14 = Amount8.nextElementSibling;
+            let TotalP = Amount14.nextElementSibling;
+            let NewD = TotalP.nextElementSibling;
+            PostVat.addEventListener("input", function () {
+              if (PostVat.value === "") {
+                Amount8.innerHTML = "0";
+                Amount14.innerHTML = "0";
+                TotalP.innerHTML = "0";
+                NewD.innerHTML = "0";
+              } else {
+                Amount8.innerHTML = (PostVat.value * 0.08).toFixed(2);
+                Amount14.innerHTML = (
+                  (parseFloat(Amount8.innerHTML) + parseFloat(PostVat.value)) *
+                  0.14
+                ).toFixed(2);
+                TotalP.innerHTML = (
+                  parseFloat(PostVat.value) +
+                  parseFloat(Amount8.innerHTML) +
+                  parseFloat(Amount14.innerHTML)
+                ).toFixed(2);
+
+                NewD.innerHTML = (parseFloat(TotalP.innerHTML) + 12.31).toFixed(
+                  2
+                );
+              }
+            });
           }
         } else if (result === "Orange Simulator") {
           newm.innerHTML = mains["Home"];
@@ -7994,4 +8111,57 @@ inpv.addEventListener("input", function () {
 let inpv2 = document.getElementById("BefTaxes");
 inpv2.addEventListener("input", function () {
   inpv2.nextElementSibling.innerHTML = (inpv2.value / 0.7).toFixed(2) + " LE";
+});
+
+let Start = document.getElementById("Start");
+let End = document.getElementById("End");
+let Total = document.getElementById("TotalDays");
+
+End.addEventListener("input", function () {
+  let date1 = new Date(Start.value);
+  let date2 = new Date(End.value);
+  let Months = document.getElementById("TotalMonths");
+  let AMountRes = Months.nextElementSibling;
+  if (!isNaN(date1) && !isNaN(date2)) {
+    let difference = date2 - date1;
+    let DifDays = difference / 1000 / 60 / 60 / 24 + 1;
+    Total.innerHTML = `Total Days = ${DifDays}`;
+    Months.innerHTML = `${(DifDays / 30).toFixed(2)}`;
+    AMountRes.innerHTML = `${(Months.innerHTML * 36.93).toFixed(2)}`;
+  } else {
+    Swal.fire({
+      title: "Error",
+      text: "One or both dates are invalid.",
+      icon: "error",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  }
+});
+
+let PostVat = document.getElementById("PostVat");
+let Amount8 = PostVat.parentElement.nextElementSibling;
+let Amount14 = Amount8.nextElementSibling;
+let TotalP = Amount14.nextElementSibling;
+let NewD = TotalP.nextElementSibling;
+PostVat.addEventListener("input", function () {
+  if (PostVat.value === "") {
+    Amount8.innerHTML = "0";
+    Amount14.innerHTML = "0";
+    TotalP.innerHTML = "0";
+    NewD.innerHTML = "0";
+  } else {
+    Amount8.innerHTML = (PostVat.value * 0.08).toFixed(2);
+    Amount14.innerHTML = (
+      (parseFloat(Amount8.innerHTML) + parseFloat(PostVat.value)) *
+      0.14
+    ).toFixed(2);
+    TotalP.innerHTML = (
+      parseFloat(PostVat.value) +
+      parseFloat(Amount8.innerHTML) +
+      parseFloat(Amount14.innerHTML)
+    ).toFixed(2);
+
+    NewD.innerHTML = (parseFloat(TotalP.innerHTML) + 12.31).toFixed(2);
+  }
 });
