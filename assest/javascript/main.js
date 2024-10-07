@@ -7911,6 +7911,31 @@ let mains = {
         </tbody>
       </table>
     `,
+    TipsAndTricks:`<h1
+        class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
+      >Tips And Tricks</h1>
+      <table class="text-center my-2 grid-cols-2">
+        <thead>
+          <tr class="rounded-t">
+            <th>Short Description "Memo"</th>
+            <th>What It Do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC CHARGE</td>
+            <td>Explain The Device Which Cs Install It And Installment Amount & Duration</td>
+          </tr>
+          <tr>
+            <td>roaming_welcome_out	</td>
+            <td>Explain The Country Which Cs At it Outside + opreator Which He Latched on it</td>
+          </tr>
+          <tr>
+            <td>roaming_welcome_in	</td>
+            <td>Explain That Cs Returned To Egypt</td>
+          </tr>
+        </tbody>
+      </table>`
 };
 
 //  get li a innerHTML
