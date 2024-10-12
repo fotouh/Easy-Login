@@ -15,7 +15,7 @@
 
 let mains = {
   Home: `<h1
-        class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
+        class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
       >
         Welcome to Easy Login 👋
       </h1>
@@ -7911,7 +7911,7 @@ let mains = {
         </tbody>
       </table>
     `,
-    TipsAndTricks:`<h1
+  TipsAndTricks: `<h1
         class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
       >Tips And Tricks</h1>
       <table class="text-center my-2 grid-cols-2">
@@ -7935,7 +7935,7 @@ let mains = {
             <td>Explain That Cs Returned To Egypt</td>
           </tr>
         </tbody>
-      </table>`
+      </table>`,
 };
 
 //  get li a innerHTML
@@ -8044,9 +8044,6 @@ function inl() {
                 });
               }
             });
-            console.log(SieOpt);
-            console.log(input);
-            console.log(tables);
           }
           if (result.innerHTML === "Home") {
             let inpv = document.getElementById("AfTaxes");
