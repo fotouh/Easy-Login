@@ -7469,7 +7469,7 @@ let mains = {
           </tr>
           <tr>
             <td>110 PrePaid Tl</td>
-            <td>IMI CC 110 TL 3WHs Manual</td>
+            <td>C110 Hybrid & Prepaid TL 3WHs</td>
           </tr>
           <tr>
             <td>FC Assist</td>
@@ -7481,7 +7481,7 @@ let mains = {
           </tr>
           <tr>
             <td>110 Pre Assist</td>
-            <td>IMI CC 110 Assist team 24 WH Manual</td>
+            <td>Raya 110 Assist team 24 WH Manual</td>
           </tr>
 
           <tr>
