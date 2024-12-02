@@ -7983,7 +7983,7 @@ function inl() {
             });
             let tables = document.getElementsByTagName("table");
             let input = document.getElementById("myInput");
-            let SieOpt = document.getElementById("SieList");
+            let SieOpt = document.querySelectorAll("#SieList");
             input.addEventListener("input", function () {
               var rows = tables[SearchWord].getElementsByTagName("tr");
 
@@ -7999,9 +7999,9 @@ function inl() {
                 }
               }
             });
-            SieOpt.addEventListener("click", function (e) {
-              if (e.target.innerHTML.trim() === "Fault") {
-                e.target.addEventListener("click", function () {
+            SieOpt.forEach((ea) => {
+              ea.addEventListener("click", function (e) {
+                if (e.target.innerHTML.trim() === "Fault") {
                   const fault = document.getElementById("fault");
                   SearchWord = 0;
                   for (let i = 0; i < tables.length; i++) {
@@ -8013,9 +8013,7 @@ function inl() {
                       tables[i].style.display = "none";
                     }
                   }
-                });
-              } else if (e.target.innerHTML.trim() === "Request") {
-                e.target.addEventListener("click", function () {
+                } else if (e.target.innerHTML.trim() === "Request") {
                   const request = document.getElementById("request");
                   SearchWord = 1;
                   for (let i = 0; i < tables.length; i++) {
@@ -8027,9 +8025,7 @@ function inl() {
                       tables[i].style.display = "none";
                     }
                   }
-                });
-              } else if (e.target.innerHTML.trim() === "Acc") {
-                e.target.addEventListener("click", function () {
+                } else if (e.target.innerHTML.trim() === "Acc") {
                   const acc = document.getElementById("acc");
                   SearchWord = 2;
                   for (let i = 0; i < tables.length; i++) {
@@ -8041,8 +8037,8 @@ function inl() {
                       tables[i].style.display = "none";
                     }
                   }
-                });
-              }
+                }
+              });
             });
           }
           if (result.innerHTML === "Home") {

@@ -98,3 +98,6 @@ td > a {
 #SieList :first-child button {
   background-color: transparent;
 }
+input::placeholder {
+  color: #000;
+}
