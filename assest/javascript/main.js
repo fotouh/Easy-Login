@@ -7905,8 +7905,15 @@ let mains = {
             <td>
               <a target="_blank" href="https://10.56.230.92:8081/">Status</a>
             </td>
-            <td></td>
-            <td></td>
+            <td>mzidan</td>
+            <td>Zidan@9632</td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank" href="http://umvas.vlserv.com/DOBManagement/WebTool/CustomerCare/SDPCustomerCareTool/index">Victory-link</a>
+            </td>
+            <td>OrangeCustomerCareUser</td>
+            <td>QpEOYYn4s8</td>
           </tr>
         </tbody>
       </table>
