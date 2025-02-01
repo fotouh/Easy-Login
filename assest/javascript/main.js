@@ -15,12 +15,12 @@
 
 let mains = {
   Home: `<h1
-        class="flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
-      >
-        Welcome to Easy Login 👋
-      </h1>
-      <div class="grid grid-cols-6 gap-4 w-11/12">
-        <div class="grid col-span-4 pt-5 gap-4 bg-black p-4 rounded-lg">
+      class="animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold">
+      Welcome to Easy Login 👋
+    </h1>
+    <div class="flex flex-row gap-2">
+      <div class="flex flex-col gap-2">
+        <div class="pt-5 bg-black p-4 rounded-lg">
           <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
             Vat For post
           </h1>
@@ -47,67 +47,51 @@ let mains = {
             </tbody>
           </table>
         </div>
-        <div class="grid col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
-          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-            Vat For Pre
-          </h1>
-          <div class="flex gap-4">
-            <div class="flex flex-col gap-3">
-              <input
-                class="p-2 rounded-lg"
-                type="number"
-                id="AfTaxes"
-                placeholder="Amount After Taxes"
-              />
-              <div class="p-2 rounded-lg bg-white">Balance</div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <input
-                class="p-2 rounded-lg"
-                type="number"
-                id="BefTaxes"
-                placeholder="Balance"
-              />
-              <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+        <div class="flex gap-3">
+          <div class="pt-5 bg-black p-4 rounded-lg ">
+            <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+              Vat For Pre
+            </h1>
+            <div class="flex gap-4">
+              <div class="flex flex-col gap-3">
+                <input class="p-2 rounded-lg" type="number" id="AfTaxes" placeholder="Amount After Taxes" />
+                <div class="p-2 rounded-lg bg-white">Balance</div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <input class="p-2 rounded-lg" type="number" id="BefTaxes" placeholder="Balance" />
+                <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+              </div>
             </div>
           </div>
+          <div class="grid gap-4 bg-black p-4 rounded-lg">
+            <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+              Amount Should Be Paid
+            </h1>
+            <div id="TotalMonths" class="p-2 rounded-lg bg-white">0</div>
+            <div class="p-2 rounded-lg bg-white">Le</div>
+          </div>
         </div>
-        <div
-          class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg"
-        >
+      </div>
+      <div class="flex flex-col gap-2 ">
+        <div class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
           <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
             Calc Days
           </h1>
           <div class="flex flex-col gap-4">
             <div class="flex gap-3">
               <div class="p-2 rounded-lg bg-white">From</div>
-              <input
-                class="p-2 rounded-lg"
-                type="date"
-                id="Start"
-                placeholder="Amount After Taxes"
-              />
+              <input class="p-2 rounded-lg" type="date" id="Start" placeholder="Amount After Taxes" />
             </div>
             <div class="flex gap-3">
               <div class="p-2 rounded-lg bg-white">..To</div>
-              <input
-                class="p-2 rounded-lg"
-                type="date"
-                id="End"
-                placeholder="Balance"
-              />
+              <input class="p-2 rounded-lg" type="date" id="End" placeholder="Balance" />
             </div>
             <div id="TotalDays" class="p-2 rounded-lg bg-white">Total Days</div>
           </div>
         </div>
-        <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
-          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-            Amount Should Be Paid
-          </h1>
-          <div id="TotalMonths" class="p-2 rounded-lg bg-white"></div>
-          <div class="p-2 rounded-lg bg-white">Le</div>
-        </div>
-      </div>`,
+
+      </div>
+    </div>`,
   SiebelGuide: `<h1 class="text-center text-white font-bold py-4 text-4xl">Siebel Guide
       </h1>
 
@@ -7658,6 +7642,14 @@ let mains = {
               >Suppliers Service Requests</a
             >
           </li>
+          <li class="rounded flex items-center justify-center bg-white">
+            <a
+              class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
+              href="https://intranet/teamsites/customerService/functions/2000%20Agents/110%20Call%20Guide/Pages/default.aspx"
+              target="_blank"
+              >Orange Simulator</a
+            >
+          </li>
         </ul>`,
   QMails: `<h1 class="text-center text-white font-bold py-4 text-4xl">Q Mails</h1>
       <ul
@@ -8072,7 +8064,7 @@ function inl() {
                 let DifDays = difference / 1000 / 60 / 60 / 24 + 1;
                 Total.innerHTML = `Total Days = ${DifDays}`;
                 Months.innerHTML = `${(DifDays / 30).toFixed(2)}`;
-                AMountRes.innerHTML = `${(Months.innerHTML * 36.93).toFixed(
+                AMountRes.innerHTML = `${(Months.innerHTML * 43.09).toFixed(
                   2
                 )}`;
               } else {
@@ -8114,15 +8106,6 @@ function inl() {
               }
             });
           }
-        } else if (result === "Orange Simulator") {
-          newm.innerHTML = mains["Home"];
-          divh.before(newm);
-          newm.classList.add(
-            "flex",
-            "flex-col",
-            "justify-center",
-            "items-center"
-          );
         }
       }
     }
@@ -8152,7 +8135,7 @@ End.addEventListener("input", function () {
     let DifDays = difference / 1000 / 60 / 60 / 24 + 1;
     Total.innerHTML = `Total Days = ${DifDays}`;
     Months.innerHTML = `${(DifDays / 30).toFixed(2)}`;
-    AMountRes.innerHTML = `${(Months.innerHTML * 36.93).toFixed(2)}`;
+    AMountRes.innerHTML = `${(Months.innerHTML * 43.09).toFixed(2)}`;
   } else {
     Swal.fire({
       title: "Error",

@@ -1,128 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="assest/css/bootstrap.min.css" /> -->
-    <title>Easy Login</title>
-    <link
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assest/css/all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link href="assest/css/sweetalert2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assest/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="assest/images/Orange Logo.png"
-      type="image/x-icon"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assest/javascript/sweetalert2.min.js"></script>
-  </head>
-  <body class="bg-orange-500 font-mono overflow-x-hidden">
-    <header>
-      <nav class="bg-black flex justify-between">
-        <picture class="animate__animated animate__fadeInLeft">
-          <img
-            width="150px"
-            height="100px"
-            src="assest/images/Orange Logo.png"
-            alt="Logo"
-          />
-        </picture>
-        <p
-          class="animate__animated animate__fadeInRight text-white flex items-end p-3"
-        >
-          Coded By : Fatoh Mohamed Care Of Bishoy Shahat
-        </p>
-      </nav>
-    </header>
-    <nav>
-      <ul
-        id="list"
-        class="flex justify-around flex-wrap font-bold bg-white-50 border-b-2"
-      >
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Siebel Guide</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Trouble Shooting</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a
-            class="flex p-4 items-center h-full w-full"
-            onclick="window.open('My Orange Map - V 7.8.0.pdf', '_blank', 'fullscreen=yes'); return false;"
-            >Orange Simulator</a
-          >
-        </li>
-        <li
-          class="active capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Home</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Manual Activties</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Intra Guide</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Q Mails</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Bulk</a
-          >
-        </li>
-        <li
-          class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer"
-        >
-          <a class="flex p-4 items-center h-full w-full" onclick="inl()"
-            >Tips And Tricks</a
-          >
-        </li>
-      </ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="assest/css/bootstrap.min.css" /> -->
+  <title>Easy Login</title>
+  <link rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="assest/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="assest/css/sweetalert2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assest/css/style.css" />
+  <link rel="shortcut icon" href="assest/images/Orange Logo.png" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assest/javascript/sweetalert2.min.js"></script>
+</head>
+
+<body class="bg-orange-500 font-mono overflow-x-hidden">
+  <header>
+    <nav class="bg-black flex justify-between">
+      <picture class="animate__animated animate__fadeInLeft">
+        <img width="150px" height="100px" src="assest/images/Orange Logo.png" alt="Logo" />
+      </picture>
+      <p class="animate__animated animate__fadeInRight text-white flex items-end p-3">
+        Coded By : Fatoh Mohamed Care Of Bishoy Shahat
+      </p>
     </nav>
-    <main class="flex flex-col justify-center items-center">
-      <h1
-        class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold"
-      >
-        Welcome to Easy Login 👋
-      </h1>
-      <div class="grid grid-cols-6 gap-4 w-11/12">
-        <div class="grid col-span-4 pt-5 gap-4 bg-black p-4 rounded-lg">
+  </header>
+  <nav>
+    <ul id="list" class="flex justify-around flex-wrap font-bold bg-white-50 border-b-2">
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Siebel Guide</a>
+      </li>
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Trouble Shooting</a>
+      </li>
+
+
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Manual Activties</a>
+      </li>
+      <li class="active capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Home</a>
+      </li>
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Intra Guide</a>
+      </li>
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Q Mails</a>
+      </li>
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Bulk</a>
+      </li>
+      <li class="capitalize hover:ring-2 ring-blue-500/50 hover:bg-white hover:rounded-lg cursor-pointer">
+        <a class="flex p-4 items-center h-full w-full" onclick="inl()">Tips And Tricks</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="flex flex-col justify-center items-center">
+    <h1
+      class="animate__animated animate__flash flex flex-col justify-center items-center text-white text-4xl py-10 font-bold">
+      Welcome to Easy Login 👋
+    </h1>
+    <div class="flex flex-row gap-2">
+      <div class="flex flex-col gap-2">
+        <div class="pt-5 bg-black p-4 rounded-lg">
           <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
             Vat For post
           </h1>
@@ -149,72 +92,57 @@
             </tbody>
           </table>
         </div>
-        <div class="grid col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
-          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-            Vat For Pre
-          </h1>
-          <div class="flex gap-4">
-            <div class="flex flex-col gap-3">
-              <input
-                class="p-2 rounded-lg"
-                type="number"
-                id="AfTaxes"
-                placeholder="Amount After Taxes"
-              />
-              <div class="p-2 rounded-lg bg-white">Balance</div>
-            </div>
-            <div class="flex flex-col gap-3">
-              <input
-                class="p-2 rounded-lg"
-                type="number"
-                id="BefTaxes"
-                placeholder="Balance"
-              />
-              <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+        <div class="flex gap-3">
+          <div class="pt-5 bg-black p-4 rounded-lg ">
+            <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+              Vat For Pre
+            </h1>
+            <div class="flex gap-4">
+              <div class="flex flex-col gap-3">
+                <input class="p-2 rounded-lg" type="number" id="AfTaxes" placeholder="Amount After Taxes" />
+                <div class="p-2 rounded-lg bg-white">Balance</div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <input class="p-2 rounded-lg" type="number" id="BefTaxes" placeholder="Balance" />
+                <div class="p-2 rounded-lg bg-white">Amount After Taxes</div>
+              </div>
             </div>
           </div>
+          <div class="grid gap-4 bg-black p-4 rounded-lg">
+            <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
+              Amount Should Be Paid
+            </h1>
+            <div id="TotalMonths" class="p-2 rounded-lg bg-white">0</div>
+            <div class="p-2 rounded-lg bg-white">Le</div>
+          </div>
         </div>
-        <div
-          class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg"
-        >
+      </div>
+      <div class="flex flex-col gap-2 ">
+        <div class="grid col-start-2 col-span-2 pt-5 gap-4 bg-black p-4 rounded-lg">
           <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
             Calc Days
           </h1>
           <div class="flex flex-col gap-4">
             <div class="flex gap-3">
               <div class="p-2 rounded-lg bg-white">From</div>
-              <input
-                class="p-2 rounded-lg"
-                type="date"
-                id="Start"
-                placeholder="Amount After Taxes"
-              />
+              <input class="p-2 rounded-lg" type="date" id="Start" placeholder="Amount After Taxes" />
             </div>
             <div class="flex gap-3">
               <div class="p-2 rounded-lg bg-white">..To</div>
-              <input
-                class="p-2 rounded-lg"
-                type="date"
-                id="End"
-                placeholder="Balance"
-              />
+              <input class="p-2 rounded-lg" type="date" id="End" placeholder="Balance" />
             </div>
             <div id="TotalDays" class="p-2 rounded-lg bg-white">Total Days</div>
           </div>
         </div>
-        <div class="grid pt-5 gap-4 bg-black p-4 rounded-lg">
-          <h1 class="p-2 rounded-lg text-center text-white font-bold text-2xl">
-            Amount Should Be Paid
-          </h1>
-          <div id="TotalMonths" class="p-2 rounded-lg bg-white"></div>
-          <div class="p-2 rounded-lg bg-white">Le</div>
-        </div>
+
       </div>
-    </main>
-    <div class="hidden"></div>
+    </div>
+  </main>
+  <div class="hidden"></div>
 
-    <script src="assest/javascript/all.min.js"></script>
+  <script src="assest/javascript/all.min.js"></script>
 
-    <script src="assest/javascript/main.js"></script>
-  </body>
+  <script src="assest/javascript/main.js"></script>
+</body>
+
 </html>
