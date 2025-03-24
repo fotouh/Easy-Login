@@ -7645,7 +7645,7 @@ let mains = {
           <li class="rounded flex items-center justify-center bg-white">
             <a
               class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
-              href="https://intranet/teamsites/customerService/functions/2000%20Agents/110%20Call%20Guide/Pages/default.aspx"
+              href="https://intranet/teamsites/customerService/functions/2000%20Agents/Call%20Guide/Pages/default.aspx"
               target="_blank"
               >Orange Simulator</a
             >
@@ -7712,7 +7712,7 @@ let mains = {
             >Bucket Not Found</a
           >
         </li>
-        <li class="rounded flex items-center justify-center bg-white">
+        <li class="rounded flex items-center justify-center bg-red-600">
           <a
             class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
             href="assest/Mails/ Invoices Problem .msg"
@@ -7795,6 +7795,13 @@ let mains = {
             class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
             href="assest/Mails/Midnight Handover for 02102024.msg"
             >Midnight HandOver</a
+          >
+        </li>
+         <li class="rounded flex items-center justify-center bg-white">
+          <a
+            class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
+            href="assest/Mails/Shift Highlights 2622025.msg"
+            >Shift Hightlights</a
           >
         </li>
       </ul>`,
