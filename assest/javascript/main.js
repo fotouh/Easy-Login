@@ -7801,8 +7801,7 @@ let mains = {
           <a
             class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
             href="assest/Mails/Shift Highlights 2622025.msg"
-            >Shift Hightlights</a
-          >
+            >Shift Hightlights</a>
         </li>
         <li class="rounded flex items-center justify-center bg-white">
           <a
