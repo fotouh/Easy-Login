@@ -7803,13 +7803,6 @@ let mains = {
             href="assest/Mails/Shift Highlights 2622025.msg"
             >Shift Hightlights</a>
         </li>
-        <li class="rounded flex items-center justify-center bg-white">
-          <a
-            class="w-full p-2 hover:bg-black hover:text-white hover:rounded font-bold"
-            href="mailto:Egypt CC 110 Postpaid Supervisors&ccEgypt CC 110 Postpaid Team Leaders; Egypt CC FC Management Team; Egypt CC WFM Team&subject=Midnight Handover for ${Date.prototype.toISOString(Date.now())} "
-            >Test HandMail</a
-          >
-        </li>
       </ul>`,
   Bulk: `  <h1 class="flex flex-col justify-center items-center text-white text-4xl py-4 font-bold">Bulk
       </h1>
